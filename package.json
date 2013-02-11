@@ -1,0 +1,30 @@
+{
+  "name": "jsapi-documentation",
+  "version": "1.0.0",
+  "description": "Example usage of the Softgames JavaScript API.",
+  "main": "server.js",
+  "author": {
+    "name": "Softgames GmbH",
+    "email": "scotty@softgames.de"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/softgames/jsapi-documentation.git"
+  },
+  "dependencies": {
+    "express": "3.1.x",
+    "ejs": "0.8.x"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "restler": "*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
