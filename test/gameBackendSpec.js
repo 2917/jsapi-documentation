@@ -20,7 +20,8 @@ describe('gameBackend', function() {
 
   describe('#index', function() {
     it('should return 200 with a valid signature', function(done) {
-      get('http://localhost:5000?user_id=test&sig=3bc8fd56f812cca20851785161d85ddf', function(data, res) {
+      var url = 'http://localhost:5000?user_id=test&sig=3fdb39a7fa614dbb5e1f214e25588a6a737964251d1da77488a927459079d96e';
+      get(url, function(data, res) {
         res.statusCode.should.equal(200);
         done();
       });
