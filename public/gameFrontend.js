@@ -18,7 +18,17 @@ softgames.ready(function() {
   });
   $("#startPayment").click(function() {
     // Stop your game
-    softgames.startPayment();
+    options = {
+      item_id: "1",
+      title: "Bag of gold",
+      price_tier: "1",
+      description: "A bag of gold followed the moonsilver weapon.",
+      custom_data: {some: "data"}
+    };
+    softgames.startPayment({}, function() {
+      printResult("Payment closed.");
+      // Continue the game
+    });
   });
 });
 
