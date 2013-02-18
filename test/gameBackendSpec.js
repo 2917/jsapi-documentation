@@ -16,7 +16,8 @@ describe('gameBackend', function() {
 
   describe('#index', function() {
     it('should return 200 with a valid signature', function(done) {
-      rest.get(host + '?user_id=test&sig=3bc8fd56f812cca20851785161d85ddf').on('complete', function(data, res) {
+      var url = host + '?user_id=test&sig=3fdb39a7fa614dbb5e1f214e25588a6a737964251d1da77488a927459079d96e';
+      rest.get(url).on('complete', function(data, res) {
         res.statusCode.should.equal(200);
         done();
       });
@@ -45,7 +46,7 @@ describe('gameBackend', function() {
         price_tier: "1",
         custom_data: "fff",
         timestamp: "000",
-        sig: "2452e2207c18f5282da971854c28e9d5"
+        sig: "0732414788ad722faa73b184c6664e7ac68a796802e2fe80d261500312bd8112"
       };
 
       rest.post(host + '/notifications', {data: data}).on('complete', function(data, res) {
@@ -57,7 +58,7 @@ describe('gameBackend', function() {
     it('should return 404 for an invalid notification type', function(done) {
       var data = {
         type: "invalid",
-        sig: "6fd82e6c0eeb3f69360e57772f04b66e"
+        sig: "6948df77c2f3d4b9ce8b225be11ec1e9fb4985256bd4bd240b1d05f7d595c3d1"
       };
 
       rest.post(host + '/notifications', {data: data}).on('complete', function(data, res) {
