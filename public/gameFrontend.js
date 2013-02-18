@@ -25,7 +25,7 @@ softgames.ready(function() {
       description: "A bag of gold followed the moonsilver weapon.",
       custom_data: {some: "data"}
     };
-    softgames.startPayment({}, function() {
+    softgames.startPayment(options, function() {
       printResult("Payment closed.");
       // Continue the game
     });
