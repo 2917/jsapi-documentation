@@ -1,5 +1,12 @@
 var softgames = new Softgames();
 softgames.ready(function() {
+  $(function() {
+    // Load game after the API and the document is ready
+    loadGame();
+  });
+});
+
+var loadGame = function() {
   $("#ready").html("Ready.");
 
   $("#getCurrentUser").click(function() {
@@ -30,8 +37,8 @@ softgames.ready(function() {
       // Continue the game
     });
   });
-});
+};
 
-printResult = function(result) {
+var printResult = function(result) {
   $("#result").html(JSON.stringify(result));
 };
