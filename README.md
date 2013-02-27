@@ -7,14 +7,14 @@
 
 ### Commands
 #### Install
-```bash
+```
 npm install
 ```
 #### Start
-```bash
+```
 npm start
 ```
 #### Run the tests
-```bash
+```
 npm test
 ```
