@@ -37,6 +37,10 @@ var loadGame = function() {
       // Continue the game
     });
   });
+  $("#adjustHeight").click(function() {
+    height = prompt("Enter the desired container height value in pixels");
+    softgames.adjustHeight(height);
+  });      
 };
 
 var printResult = function(result) {
