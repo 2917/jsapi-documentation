@@ -40,7 +40,11 @@ var loadGame = function() {
   $("#adjustHeight").click(function() {
     height = prompt("Enter the desired container height value in pixels");
     softgames.adjustHeight(height);
-  });      
+  });    
+  $("#getTiers").click(function() {
+    height = prompt("Enter the tier numbers to get the corresponding prices. E.g. 1,2,3,4");
+    softgames.getTiers(height, printResult).split(",");
+  });        
 };
 
 var printResult = function(result) {
