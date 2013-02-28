@@ -42,8 +42,8 @@ var loadGame = function() {
     softgames.adjustHeight(height);
   });    
   $("#getTiers").click(function() {
-    height = prompt("Enter the tier numbers to get the corresponding prices and currency. E.g. 1,2,3,4");
-    softgames.getTiers(height, printResult).split(",");
+    tiers = prompt("Enter the tier numbers to get the corresponding prices and currency. E.g. 1,2,3,4").split(",");
+    softgames.getTiers(tiers, printResult);
   });        
 };
 
