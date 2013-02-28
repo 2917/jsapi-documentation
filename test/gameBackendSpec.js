@@ -37,7 +37,7 @@ describe('gameBackend', function() {
   });
 
   describe('#notifications', function() {
-    it('should return 200 and *OK* with a valid signature', function(done) {
+    it('should return 200 and *OK* with a valid signature and notification type', function(done) {
       var data = {
         type: "finalize-payment",
         payment_id: "1",
@@ -55,6 +55,21 @@ describe('gameBackend', function() {
         done();
       });
     });
+    it('should return 200 and *OK* with a valid signature and notification type', function(done) {
+      var data = {
+        type: "invite-accept",
+        invited_by_user_id: "1",
+        invited_user_id: "2",
+        timestamp: "1361373960",
+        sig: "94e2cc66c4beba08afe6c2b8640291a16255a6797c68d362cfd17ce194c1dd78"
+      };
+
+      rest.post(host + '/notifications', {data: data}).on('complete', function(data, res) {
+        res.statusCode.should.equal(200);
+        data.should.equal("*OK*");
+        done();
+      });
+    });    
     it('should return 404 for an invalid notification type', function(done) {
       var data = {
         type: "invalid",
