@@ -13,7 +13,7 @@ var loadGame = function() {
     softgames.getCurrentUser({include_friends: true}, printResult);
   });
   $("#getUsers").click(function() {
-    userIds = prompt("Enter the ids of the users you want to request. E.g. 1,2,3").split(",");
+    var userIds = prompt("Enter the ids of the users you want to request. E.g. 1,2,3").split(",");
     softgames.getUsers(userIds, {include_friends: true}, printResult);
   });
   $("#startInvite").click(function() {
@@ -25,7 +25,7 @@ var loadGame = function() {
   });
   $("#startPayment").click(function() {
     // Stop your game
-    options = {
+    var options = {
       item_id: "1",
       title: "Bag of gold",
       price_tier: "1",
@@ -38,9 +38,13 @@ var loadGame = function() {
     });
   });
   $("#adjustHeight").click(function() {
-    height = prompt("Enter the desired container height value in pixels");
+    var height = prompt("Enter the desired container height value in pixels");
     softgames.adjustHeight(height);
-  });      
+  });    
+  $("#getTiers").click(function() {
+    var tiers = prompt("Enter the tier numbers to get the corresponding prices and currency. E.g. 1,2,3,4").split(",");
+    softgames.getTiers(tiers, printResult);
+  });        
 };
 
 var printResult = function(result) {
