@@ -40,11 +40,19 @@ var loadGame = function() {
   $("#adjustHeight").click(function() {
     var height = prompt("Enter the desired container height value in pixels");
     softgames.adjustHeight(height);
-  });    
+  });
   $("#getTiers").click(function() {
     var tiers = prompt("Enter the tier numbers to get the corresponding prices and currency. E.g. 1,2,3,4").split(",");
     softgames.getTiers(tiers, printResult);
-  });        
+  });    
+  $("#displayBanner").click(function() {
+    softgames.displayBanner("header-banner", function(){
+      printResult("Banner loaded.");
+    });
+  });
+  $("#hideAllBanners").click(function() {
+    softgames.hideAllBanners();
+  });
 };
 
 var printResult = function(result) {
