@@ -7,7 +7,7 @@
   <script src="<%= softgames_api %>"></script>
   <script src="gameFrontend.js"></script>
 </head>
-<body>
+<body style="width: 100%; margin: 0;">
   <div id="header-banner"></div>
   Welcome to the interactive jsapi-documentation.</br>
   SoftgamesAPI: <span id="ready">Loading...</span><br>
@@ -20,7 +20,7 @@
   <button id="getTiers">getTiers</button>
   <button id="displayBanner">displayBanner</button>
   <button id="hideAllBanners">hideAllBanners</button><br>
-  Result: <span id="result"></span><br>
+  Result: <span id="result" style="word-wrap: break-word"></span><br>
   <h2>Room name: <%= title %></h2>
   <a href="/ent-bridge">Go to the bridge</a><br>
   <a href="/ent-ready">Go to ready room</a><br>
