@@ -56,5 +56,5 @@ var loadGame = function() {
 };
 
 var printResult = function(result) {
-  $("#result").html(JSON.stringify(result));
+  $("#result").html(JSON.stringify(result, {}, " "));
 };
