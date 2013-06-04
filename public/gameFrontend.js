@@ -46,13 +46,15 @@ var loadGame = function() {
     softgames.getTiers(tiers, printResult);
   });    
   $("#displayBanner").click(function() {
-    softgames.displayBanner("header-banner", function(){
-      printResult("Banner loaded.");
+    softgames.displayBanner(function(){
+      printResult("Banner closed.");
     });
   });
-  $("#hideAllBanners").click(function() {
-    softgames.hideAllBanners();
-  });
+		$("#getBanner").click(function() {
+				softgames.getBanner(function(data){
+						$("#header-banner").html(data)
+				})
+		});
 };
 
 var printResult = function(result) {
